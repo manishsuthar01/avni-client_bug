@@ -41,9 +41,7 @@ class ProgramFormComponent extends AbstractComponent {
     }
 
     getNextParams(popVerificationVew) {
-        state.enrolment.program.name = state.enrolment.program.name.trim();
-        state.enrolment.program.displayName = state.enrolment.program.displayName.trim();
-
+       
         const observations = this.props.context.usage === ProgramEnrolmentState.UsageKeys.Enrol ? this.props.state.enrolment.observations : this.props.state.enrolment.programExitObservations;
         const phoneNumberObservation = _.find(observations, obs => obs.isPhoneNumberVerificationRequired(this.props.state.filteredFormElements));
         return {
